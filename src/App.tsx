@@ -1,15 +1,17 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Keyboard, TouchableWithoutFeedback } from "react-native";
 import SignUpForm from "./components/SignUpForm";
 import SignInForm from "./components/SignInForm";
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <SignUpForm />
-        <SignInForm />
-      </View>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <View style={styles.container}>
+          <SignUpForm />
+          <SignInForm />
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
