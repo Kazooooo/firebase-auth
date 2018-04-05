@@ -31,7 +31,11 @@ export default class SignUpForm extends React.Component<{}, SignUpFormState> {
       <View>
         <View style={{ marginBottom: 10 }}>
           <FormLabel>Enter Phone Number</FormLabel>
-          <FormInput value={this.state.phone} onChangeText={this.handleChangeText} />
+          <FormInput
+            keyboardType="numeric"
+            value={this.state.phone}
+            onChangeText={this.handleChangeText}
+          />
         </View>
         <Button title="Submit" onPress={this.handleSubmit} />
       </View>

@@ -24,16 +24,24 @@ export default class SignInForm extends React.Component<{}, SignInFormState> {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   render() {
     return (
       <View>
         <View style={{ marginBottom: 10 }}>
           <FormLabel>Enter Phone Number</FormLabel>
-          <FormInput value={this.state.phone} onChangeText={this.handleChangePhoneText} />
+          <FormInput
+            keyboardType="numeric"
+            value={this.state.phone}
+            onChangeText={this.handleChangePhoneText}
+          />
           <FormLabel>Enter Code</FormLabel>
-          <FormInput value={this.state.code} onChangeText={this.handleChangeCodeText} />
+          <FormInput
+            keyboardType="numeric"
+            value={this.state.code}
+            onChangeText={this.handleChangeCodeText}
+          />
         </View>
         <Button title="Submit" onPress={this.handleSubmit} />
       </View>
